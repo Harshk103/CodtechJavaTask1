@@ -1,0 +1,55 @@
+import java.util.*;
+class task2
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        String name="";
+
+        double e=0,m=0,c=0,ea=0,ma=0,ca=0;
+
+        System.out.print("Enter the name of the student:");
+        name=sc.nextLine();
+        System.out.print("Enter the marks obtained in English out of 70 : ");
+        e= sc.nextDouble();
+        System.out.print("Enter the marks obtained in English assignment out of 30 : ");
+        ea= sc.nextDouble();
+        System.out.print("Enter the marks obtained in Mathematics out of 70 : ");
+        m= sc.nextDouble();
+        System.out.print("Enter the marks obtained in Mathematics assignment out of 30 : ");
+        ma= sc.nextDouble();
+        System.out.print("Enter the marks obtained in Computer Applications out of 70 : ");
+        c= sc.nextDouble(); 
+        System.out.print("Enter the marks obtained in Computer Applications practical out of 30 : ");
+        ca= sc.nextDouble();
+
+        double theoryavg= (e+m+c)/3;
+        double assignmentavg= (ea+ma+ca)/3;
+        double totalavg= (e+ea+m+ma+c+ca)/3;
+
+        System.out.println("The name of the student is: "+ name);
+        System.out.println("He has obtained a total of "+(e+ea)+" marks in English");
+        System.out.println("He has obtained a total of "+(m+ma)+" marks in Mathematics");
+        System.out.println("He has obtained a total of "+(c+ca)+" marks in Computer Applications");
+        System.out.println("His average marks in theory papers amounts to: "+ String.format("%.3f", theoryavg)+ " out of 70");
+        System.out.println("His average marks in assignments amounts to: "+ String.format("%.3f", assignmentavg)+" out of 30");
+        System.out.println("His average marks is: "+ String.format("%.3f", totalavg)+" out of 100");
+
+        if(totalavg>=95)
+        System.out.println("Grade obtained: A+");
+        else if(totalavg>=85&&totalavg<95)
+        System.out.println("Grade obtained: A");
+        else if(totalavg>=80&&totalavg<85)
+        System.out.println("Grade obtained: B+");
+        else if(totalavg>=75&&totalavg<80)
+        System.out.println("Grade obtained: B");
+        else if(totalavg>=70&&totalavg<75)
+        System.out.println("Grade obtained: C+");
+        else if(totalavg>=60&&totalavg<70)
+        System.out.println("Grade obtained: C");
+        else if(totalavg>=40&&totalavg<60)
+        System.out.println("Grade obtained: D");
+        else if (totalavg<40)
+        System.out.println("No grades obtained. Failed!!! ");
+    }
+}
